@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int MENU_ADD_FILE = 100001;
     private static final int MENU_ADD_COLLECTION = 100002;
     private static final int MENU_CHOOSE_COLLECTION = 100003;
+    private static final int MENU_EXIT_APP = 100004;
 
     private final ArrayList<FileCollection> collections = new ArrayList<>();
     private final ExecutorService ioExecutor = Executors.newSingleThreadExecutor();
@@ -384,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
         popup.getMenu().add(Menu.NONE, MENU_ADD_FILE, 0, "Dodaj novi fajl");
         popup.getMenu().add(Menu.NONE, MENU_ADD_COLLECTION, 1, "Dodaj novu kolekciju");
         popup.getMenu().add(Menu.NONE, MENU_CHOOSE_COLLECTION, 2, "Izaberi kolekciju");
+        popup.getMenu().add(Menu.NONE, MENU_EXIT_APP, 3, R.string.exit_app);
         popup.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == MENU_ADD_FILE) {
                 openFilePicker();
@@ -395,6 +397,10 @@ public class MainActivity extends AppCompatActivity {
             }
             if (item.getItemId() == MENU_CHOOSE_COLLECTION) {
                 showCollectionChooser();
+                return true;
+            }
+            if (item.getItemId() == MENU_EXIT_APP) {
+                finish();
                 return true;
             }
             return false;

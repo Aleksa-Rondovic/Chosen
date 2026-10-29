@@ -4,6 +4,7 @@
     <string name="add_files">Dodaj fajlove</string>
     <string name="choose_collection">Izaberi kolekciju</string>
     <string name="more_options">Više opcija</string>
+    <string name="exit_app">Izlaz iz aplikacije</string>
     <string name="current_collection_label">TRENUTNA KOLEKCIJA</string>
     <string name="collection_picker_hint">Izabrana kolekcija</string>
     <string name="files_heading">Sačuvani fajlovi</string>
